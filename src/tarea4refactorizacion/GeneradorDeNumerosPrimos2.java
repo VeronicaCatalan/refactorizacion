@@ -8,11 +8,24 @@ import java.util.Scanner;
  *  Proceso se repite hasta que se pasa de la raíz cuadrada del valor maximo.
  *  Los números que queden sin tachar son los numeros primos.
  * */
-
+/**
+ * 
+ * @author Verónica
+ *
+ */
+/**
+ * Clase que genera primos.
+ * 
+ */
 public class GeneradorDeNumerosPrimos2
 {
 	private static boolean esPrimo[];
 	private static int primos[];
+	/**
+	 * Metodo control general
+	 * @param max valor maximo donde buscaremos los primos.
+	 * @return primos Raiz cuadrada del valor maximo.
+	 */
 	public static int[] generarPrimos (int max)
 	{
 	if (max < 2) {
@@ -24,6 +37,10 @@ public class GeneradorDeNumerosPrimos2
 	return primos;
 	}
 }
+/**	 
+* Inicia el vector de numeros. Donde buscaremos los primos. 
+* @param max valor maximo donde buscaremos los primos.
+*/
 private static void inicializarCandidatos (int max)
 	{
 	int i;
@@ -32,6 +49,9 @@ private static void inicializarCandidatos (int max)
 	for (i=2; i<esPrimo.length; i++)
 	esPrimo[i] = true;
 }
+/**
+ * Elimina los multiplos de los numeros primos.
+ */
 private static void eliminarMultiplos ()
 	//Código del antiguo método cribar()
 	{
@@ -44,6 +64,10 @@ private static void eliminarMultiplos ()
 		}
 	}
 }
+/**
+ * Busca en el vector los numeros primos y los añade aun Array.
+ *
+ */
 private static void obtenerCandidatosNoEliminados ()
 // Código del antiguo método rellenarPrimos()
 {
@@ -59,12 +83,19 @@ private static void obtenerCandidatosNoEliminados ()
 		if (esPrimo[i])
 			primos[j++] = i;
 	}
+/**
+ * Mostrar los numeros Primos del Array.
+ */
 public static void mostrarPrimos() {
 	for (int i = 0; i < primos.length; i++) {
 		if (i%10==0) System.out.println();
 		System.out.print(primos[i]+"\t");
 	}
 }	
+/**
+ * Metodo main.
+ * @param args Parametro por defecto
+ */
 public static void main(String[] args) {
 	Scanner teclado=new Scanner(System.in);
 	System.out.println("Introduce el número para la criba de Erastótenes:");
@@ -80,5 +111,5 @@ public static void main(String[] args) {
 	//mostramos la criba de Eratostenes
 	System.out.println("\n\nVector de primos hasta:"+dato);
 	mostrarPrimos();
-	}						
+	}
 }
