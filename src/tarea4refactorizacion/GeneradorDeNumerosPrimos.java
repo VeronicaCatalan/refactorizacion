@@ -27,7 +27,6 @@ public class GeneradorDeNumerosPrimos
 			return primos;
 		}
 	}
-		
 private static void inicializarCriba (int max)
 {
 	int i;
